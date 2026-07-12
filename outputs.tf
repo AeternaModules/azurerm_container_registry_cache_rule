@@ -1,3 +1,7 @@
+output "container_registry_cache_rules_id" {
+  description = "Map of id values across all container_registry_cache_rules, keyed the same as var.container_registry_cache_rules"
+  value       = { for k, v in azurerm_container_registry_cache_rule.container_registry_cache_rules : k => v.id }
+}
 output "container_registry_cache_rules_container_registry_id" {
   description = "Map of container_registry_id values across all container_registry_cache_rules, keyed the same as var.container_registry_cache_rules"
   value       = { for k, v in azurerm_container_registry_cache_rule.container_registry_cache_rules : k => v.container_registry_id }
